@@ -1,8 +1,15 @@
 
+import sys
+import site
+import os
 from pathlib import Path
 from dotenv import load_dotenv
-import os
 from datetime import datetime
+import pygame
+
+from com.vncs.python.aliengame.alien_invasion import AlienInvasion
+
+
 load_dotenv()
 
 
@@ -10,9 +17,7 @@ load_dotenv()
 
 def main():
     # Diagnostic startup info (nie ujawnia sekretów) ---------------------
-    import sys
-    import os
-    import site
+  
 
     print("--- Startup diagnostic ---")
     try:
@@ -37,6 +42,11 @@ def main():
     print("--- End diagnostic ---\n")
 
     print("Witaj w grze Alien Game!")
+    
+    ai = AlienInvasion()
+    ai.run_game()
+    
+    
 
 if __name__ == "__main__":
     main()
